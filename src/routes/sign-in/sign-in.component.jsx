@@ -1,3 +1,5 @@
+import SignUpForm from "../../components/sign-up-form/sign-up-form";
+
 import {
   signInWithGooglePopup,
   createUserDocFromAuth,
@@ -8,10 +10,12 @@ const SignIn = () => {
     const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocFromAuth(user);
   };
+
   return (
     <div>
       <h1>Sign in page</h1>
       <button onClick={logGoogleUser}>Sign In With Google</button>
+      <SignUpForm />
     </div>
   );
 };
